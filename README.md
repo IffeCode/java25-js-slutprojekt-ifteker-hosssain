@@ -1,1 +1,0 @@
-# java25-js-slutprojekt-ifteker-hosssain
