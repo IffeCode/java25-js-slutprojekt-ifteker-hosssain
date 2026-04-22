@@ -2,3 +2,7 @@
     background-color: black;
     color: aliceblue;
 }
+
+.movie-row{
+    display: flex;
+}
