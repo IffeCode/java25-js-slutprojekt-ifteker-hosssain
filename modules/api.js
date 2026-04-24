@@ -65,3 +65,19 @@ export async function getMovieDetails(id) {
     }
   }
 }
+
+export async function getMovieCredits(id) {
+    const response = await fetch (
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+    );
+    if(response.ok){
+        const data = await response.json();
+        return data; 
+    } else{
+    if(response.status === 404){
+        throw new Error ("Credits not found!")
+    } else {
+        throw new Error ("Something went wrong!")
+    }
+  }
+}

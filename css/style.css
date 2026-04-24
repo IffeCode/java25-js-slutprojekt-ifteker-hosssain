@@ -31,6 +31,9 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     text-align: center;
     color: white;
+
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .movie img{
@@ -43,4 +46,12 @@
 .movie p{
     padding: 8px;
     font-size: 14px;
+}
+
+.cast-row{
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 10px;
+    scroll-snap-type: mandatory;
 }
