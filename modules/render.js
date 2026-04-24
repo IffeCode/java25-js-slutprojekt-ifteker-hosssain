@@ -1,7 +1,7 @@
 
 const imageURL = "https://image.tmdb.org/t/p/w500";
 
-function getStars(rating) {
+export function getStars(rating) {
   const stars = Math.round(rating / 2);
   return "★".repeat(stars) + "☆".repeat(5 - stars);
 }

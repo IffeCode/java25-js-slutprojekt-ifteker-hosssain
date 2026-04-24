@@ -1,4 +1,5 @@
 import { getMovieDetails, getMovieCredits } from "./api.js"; 
+import { getStars } from "./render.js";
 
 const imageURL = "https://image.tmdb.org/t/p/w500";
 
@@ -16,8 +17,7 @@ async function showMovie() {
         <img src="${imageURL}${movie.poster_path}" />
         <h1>${movie.title}</h1>
         <p><strong>Release:</strong> ${movie.release_date}</p>
-        <p><strong>Rating:</strong> ${movie.vote_average}</p>
-        <p><strong>Popularity:</strong> ${movie.popularity}</p>
+        <p><strong>Rating:</strong> ${movie.vote_average} ${getStars(movie.vote_average)}</p>
         <p>${movie.overview}</p>
         `;
 
