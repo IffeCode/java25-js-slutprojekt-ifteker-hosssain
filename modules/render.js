@@ -12,10 +12,10 @@ export function renderMovies(movies, containerId) {
   container.innerHTML = "";
 
   movies.slice(0, 10).forEach(movie => {
-    const el = document.createElement("div");
-    el.classList.add("movie");
+    const movieElement = document.createElement("div");
+    movieElement.classList.add("movie");
 
-    el.innerHTML = `
+    movieElement.innerHTML = `
       <img src="${imageURL}${movie.poster_path}" />
       <h3>${movie.title}</h3>
       <p>${movie.release_date}</p>
@@ -23,7 +23,12 @@ export function renderMovies(movies, containerId) {
       <p>${getStars(movie.vote_average)}</p>
     `;
 
-    container.appendChild(el);
+    movieElement.addEventListener("click", () => {
+        //root-relative paths
+        window.location.href = `/html/movie-detail.html?id=${movie.id}`;
+    });
+
+    container.appendChild(movieElement);
   });
 
 }
