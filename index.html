@@ -8,7 +8,7 @@
     <script type="module" src="./main.js"></script>
     <!-- <script src="./html/movies.html"></script> -->
     <script src="./fragments/navbar.js" defer></script>
-    <!-- <script src="./fragments/footer.js" defer></script> -->
+    <script src="./fragments/footer.js" defer></script>
 
 
 
@@ -17,22 +17,37 @@
 <body class="container">  
     <nav id="navbar"></nav>
 
-    <form class="popular-movie-list">
+    <!-- <form id="searchForm">
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for a movie..."/>
+        <button id="searchBtn" type="submit">Search </button>
+    </div>
+    </form> -->
+
+
+    <div class="popular-movie-list">
 
         <h4>Most Popular Movies</h4>
 
         <div id="popular-movies" class="popular-movie-row"></div>
          
-    </form>
+    </div>
 
-    <form class="ranked-movie-list">
+    <div class="ranked-movie-list">
 
         <h4>Highest Ranked Movies</h4>
 
         <div id="ranked-movies" class="ranked-movie-row"></div>
 
-    </form>
+    </div>
 
+    <div class="popular-actor-list">
+
+        <h4>Most Popular Actors</h4>
+
+        <div id="popular-actors" class="popular-actor-row"></div>
+         
+    </div>
 
 
     <footer id="footer"></footer>

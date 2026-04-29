@@ -1,5 +1,5 @@
 import { getMovieDetails, getMovieCredits } from "./api.js"; 
-import { getStars } from "./render.js";
+import { getStars } from "./renderMovies.js";
 
 const imageURL = "https://image.tmdb.org/t/p/w500";
 
@@ -46,8 +46,13 @@ async function showMovie() {
 
             actorElement.appendChild(img);
             actorElement.appendChild(name);
+            
+             actorElement.addEventListener("click", () => {
+            window.location.href = `/html/actor-detail.html?id=${actor.id}`;
+        });
 
             castContainer.appendChild(actorElement)
+            
 
 
         });
