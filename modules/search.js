@@ -24,7 +24,6 @@ export function actorSearch(setActors, getSortedActors) {
       return;
     }
 
-    // renderActors(data.results, "popular-actors");
     setActors(data.results);
 
     const sorted = getSortedActors()
@@ -60,7 +59,6 @@ export function movieSearch(setMovies, getSort) {
       return;
     }
 
-    // renderMovies(data.results, "movies-list");
     setMovies(data.results);
 
     const sorted = getSort()
