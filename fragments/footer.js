@@ -5,15 +5,15 @@ footer.innerHTML = `
     
     <div class="footer-section">
       <h3>MovieLizt</h3>
-      <p>The site that gives you all wanted information on movies and actors.</p>
+      <p>The site that gives you information on movies and actors</p>
     </div>
 
     <div class="footer-section">
       <h4>Links</h4>
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Movies</a></li>
-        <li><a href="#">Actors</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="/html/movies.html">Movies</a></li>
+        <li><a href="/html/actors.html">Actors</a></li>
         <li><a href="#">...</a></li>
       </ul>
     </div>

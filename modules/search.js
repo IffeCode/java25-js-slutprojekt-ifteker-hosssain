@@ -1,9 +1,10 @@
 import { searchMovies, searchActors } from "./api.js";
 import { renderMovies } from "./renderMovies.js";
 import { renderActors } from "./renderActors.js";
+import { sortActors, sortMovies } from "./sort.js";
 
 
-export function actorSearch() {
+export function actorSearch(setActors, getSortedActors) {
   const input = document.getElementById("searchInput");
   const btn = document.getElementById("searchBtn");
 
@@ -23,7 +24,14 @@ export function actorSearch() {
       return;
     }
 
-    renderActors(data.results, "popular-actors");
+    // renderActors(data.results, "popular-actors");
+    setActors(data.results);
+
+    const sorted = getSortedActors()
+    ? sortActors(data.results, getSortedActors())
+    : data.results;
+
+    renderActors(sorted, "popular-actors");
 
   });
 
@@ -32,7 +40,7 @@ export function actorSearch() {
   });
 }
 
-export function movieSearch() {
+export function movieSearch(setMovies, getSort) {
   const input = document.getElementById("searchInput");
   const btn = document.getElementById("searchBtn");
 
@@ -52,7 +60,14 @@ export function movieSearch() {
       return;
     }
 
-    renderMovies(data.results, "movies-list");
+    // renderMovies(data.results, "movies-list");
+    setMovies(data.results);
+
+    const sorted = getSort()
+    ? sortMovies(data.results, getSort())
+    : data.results;
+
+    renderMovies(sorted, "movies-list");
   });
 
   input.addEventListener("keyup", (e) => {

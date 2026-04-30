@@ -56,7 +56,7 @@
 }
 
 .actor{
-        width: 250px;
+    width: 250px;
     flex: 0 0 auto;
 
     display: flex;
@@ -104,6 +104,16 @@
     gap: 12px;
     padding: 10px;
     scroll-snap-type: mandatory;
+    scrollbar-width: none;
+}
+
+.actor-row{
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 10px;
+    scroll-snap-type: mandatory;
+    scrollbar-width: none;
 }
 
 .movie-row{
@@ -112,4 +122,5 @@
     gap: 12px;
     padding: 10px;
     scroll-snap-type: mandatory;
+    scrollbar-width: none;
 }
