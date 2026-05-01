@@ -20,8 +20,11 @@ export function renderActors(actors, containerId){
     <p>Known for: ${actor.known_for_department}</p>
   `;
 
+  const base = window.location.pathname.includes("/html/") ? "../" : "./";
+
+
   actorElement.addEventListener("click", () => {
-    window.location.href = `/html/actor-detail.html?id=${actor.id}`;
+    window.location.href = `${base}html/actor-detail.html?id=${actor.id}`;
   });
 
   container.appendChild(actorElement);

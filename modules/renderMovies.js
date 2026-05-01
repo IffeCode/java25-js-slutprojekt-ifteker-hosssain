@@ -23,9 +23,11 @@ export function renderMovies(movies, containerId) {
       <p>${getStars(movie.vote_average)}</p>
     `;
 
+    const base = window.location.pathname.includes("/html/") ? "../" : "./";
+
     movieElement.addEventListener("click", () => {
         //root-relative paths
-        window.location.href = `/html/movie-detail.html?id=${movie.id}`;
+        window.location.href = `${base}html/movie-detail.html?id=${movie.id}`;
     });
 
     container.appendChild(movieElement);
