@@ -46,9 +46,11 @@ async function showMovie() {
 
             actorElement.appendChild(img);
             actorElement.appendChild(name);
+
+            const base = window.location.pathname.includes("/html/") ? "../" : "./";
             
-             actorElement.addEventListener("click", () => {
-            window.location.href = `/html/actor-detail.html?id=${actor.id}`;
+            actorElement.addEventListener("click", () => {
+            window.location.href = `${base}html/actor-detail.html?id=${actor.id}`;
         });
 
             castContainer.appendChild(actorElement)

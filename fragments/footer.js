@@ -1,5 +1,7 @@
 const footer = document.getElementById("footer");
 
+const base = window.location.pathname.includes("/html/") ? "../" : "./";
+
 footer.innerHTML = `
           <div class="footer-container">
     
@@ -11,9 +13,9 @@ footer.innerHTML = `
     <div class="footer-section">
       <h4>Links</h4>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="/html/movies.html">Movies</a></li>
-        <li><a href="/html/actors.html">Actors</a></li>
+        <li><a href="${base}index.html">Home</a></li>
+        <li><a href="${base}html/movies.html">Movies</a></li>
+        <li><a href="${base}html/actors.html">Actors</a></li>
         <li><a href="#">...</a></li>
       </ul>
     </div>

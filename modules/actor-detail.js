@@ -44,8 +44,10 @@ async function showActor() {
       movieElement.appendChild(img);
       movieElement.appendChild(title);
 
+      const base = window.location.pathname.includes("/html/") ? "../" : "./";
+
       movieElement.addEventListener("click", () => {
-        window.location.href = `/html/movie-detail.html?id=${movie.id}`;
+        window.location.href = `${base}html/movie-detail.html?id=${movie.id}`;
       });
 
       moviesContainer.appendChild(movieElement);
