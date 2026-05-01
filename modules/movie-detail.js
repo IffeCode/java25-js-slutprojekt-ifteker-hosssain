@@ -1,6 +1,9 @@
 import { getMovieDetails, getMovieCredits } from "./api.js"; 
 import { getStars } from "./renderMovies.js";
 
+console.log("URL:", window.location.href);
+console.log("movieId:", movieId);
+
 const imageURL = "https://image.tmdb.org/t/p/w500";
 
 const urlParams = new URLSearchParams(window.location.search);
