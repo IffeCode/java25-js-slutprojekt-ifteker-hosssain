@@ -1,8 +1,6 @@
 import { getMovieDetails, getMovieCredits } from "./api.js"; 
 import { getStars } from "./renderMovies.js";
 
-console.log("URL:", window.location.href);
-console.log("movieId:", movieId);
 
 const imageURL = "https://image.tmdb.org/t/p/w500";
 
@@ -17,11 +15,11 @@ async function showMovie() {
         const container = document.getElementById("movie-detail");
 
         container.innerHTML = `
-        <img src="${imageURL}${movie.poster_path}" />
-        <h1>${movie.title}</h1>
-        <p><strong>Release:</strong> ${movie.release_date}</p>
-        <p><strong>Rating:</strong> ${movie.vote_average} ${getStars(movie.vote_average)}</p>
-        <p>${movie.overview}</p>
+            <img src="${movie.poster_path ? imageURL + movie.poster_path : "https://via.placeholder.com/500"}" />
+            <h1>${movie.title || "No title"}</h1>
+            <p><strong>Release:</strong> ${movie.release_date || "N/A"}</p>
+            <p><strong>Rating:</strong> ${movie.vote_average ?? "N/A"} ${getStars(movie.vote_average || 0)}</p>
+            <p>${movie.overview || "No overview available."}</p>
         `;
 
         const castContainer = document.getElementById("cast-container");
